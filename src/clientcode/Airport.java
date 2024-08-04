@@ -2,6 +2,11 @@ package clientcode;
 
 import data.airport.model.FlightData;
 import data.airport.model.FlightDataCollection;
+import data.airport.states.Boarding;
+import data.airport.states.TakingOff;
+import data.airport.states.TookOff;
+import data.totem.Totem;
+import data.totem.TotemClass;
 
 import java.util.Scanner;
 
@@ -10,6 +15,19 @@ public class Airport {
     private FlightDataCollection collection = new FlightDataCollection();
 
     public void run() {
+        Totem totemBoarding = new TotemClass();
+        Totem totemTookOff = new TotemClass();
+        Totem totemBoardingTookOff = new TotemClass();
+        totemBoarding.init(100, 100,"SALA DE EMBARQUE - BOARDING",Boarding.getInstance());
+        totemTookOff.init(500, 100,"SALA DE DESEMBARQUE - TOOKOFF", TookOff.getInstance());
+        totemBoardingTookOff.init(900, 100,"EMBARQUE E DESEMBARQUE - BOARDING/TOOKOFF", Boarding.getInstance() , TookOff.getInstance());
+
+        collection.register(totemBoarding);
+        collection.register(totemTookOff);
+        collection.register(totemBoardingTookOff);
+
+
+
         int option;
         do{
             System.out.println("1 - Novo voo");
@@ -36,6 +54,9 @@ public class Airport {
                     break;
 
                 default:
+                    totemBoarding.exit();
+                    totemTookOff.exit();
+                    totemBoardingTookOff.exit();
                     System.out.println("Aeroporto fechado!");
                     break;
             }
