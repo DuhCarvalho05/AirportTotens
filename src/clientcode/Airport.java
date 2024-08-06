@@ -2,6 +2,7 @@ package clientcode;
 
 import data.airport.model.FlightData;
 import data.airport.model.FlightDataCollection;
+import data.airport.states.Arriving;
 import data.airport.states.Boarding;
 import data.airport.states.TakingOff;
 import data.airport.states.TookOff;
@@ -18,9 +19,9 @@ public class Airport {
         Totem totemBoarding = new TotemClass();
         Totem totemTookOff = new TotemClass();
         Totem totemBoardingTookOff = new TotemClass();
-        totemBoarding.init(100, 100,"SALA DE EMBARQUE - BOARDING",Boarding.getInstance());
-        totemTookOff.init(500, 100,"SALA DE DESEMBARQUE - TOOKOFF", TookOff.getInstance());
-        totemBoardingTookOff.init(900, 100,"EMBARQUE E DESEMBARQUE - BOARDING/TOOKOFF", Boarding.getInstance() , TookOff.getInstance());
+        totemBoarding.init(100, 100,"SALA DE EMBARQUE - ARRIVING", Arriving.getInstance());
+        totemTookOff.init(500, 100,"SALA DE DESEMBARQUE - TAKINGOFF", TakingOff.getInstance());
+        totemBoardingTookOff.init(900, 100,"EMBARQUE E DESEMBARQUE - BOARDING/TOOKOFF",Arriving.getInstance() , TakingOff.getInstance());
 
         collection.register(totemBoarding);
         collection.register(totemTookOff);
