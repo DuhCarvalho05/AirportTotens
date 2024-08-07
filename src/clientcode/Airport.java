@@ -21,7 +21,7 @@ public class Airport {
         Totem totemBoardingTookOff = new TotemClass();
         totemBoarding.init(100, 100,"SALA DE EMBARQUE - ARRIVING", Arriving.getInstance());
         totemTookOff.init(500, 100,"SALA DE DESEMBARQUE - TAKINGOFF", TakingOff.getInstance());
-        totemBoardingTookOff.init(900, 100,"EMBARQUE E DESEMBARQUE - BOARDING/TOOKOFF",Arriving.getInstance() , TakingOff.getInstance());
+        totemBoardingTookOff.init(900, 100,"EMBARQUE E DESEMBARQUE - ARRIVING/TAKINGOFF",Arriving.getInstance() , TakingOff.getInstance());
 
         collection.register(totemBoarding);
         collection.register(totemTookOff);
