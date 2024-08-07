@@ -26,6 +26,7 @@ public class TotemClass implements Totem {
         frame.setLocation(x,y);
         frame.setSize(400, 300);
         panel = new JPanel();
+        frame.setAlwaysOnTop(true);
         panel.setLayout(new BorderLayout());
         frame.setVisible(true);
     }
