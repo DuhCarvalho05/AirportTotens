@@ -20,7 +20,7 @@ public class TotemClass implements Totem {
     public void init(Integer x, Integer y,String title, State... statesObserved) {
         flights = new Vector<>();
 
-        states = new ArrayList<State>(List.of(statesObserved));
+        states = new ArrayList<>(List.of(statesObserved));
         frame = new JFrame(title);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocation(x,y);
